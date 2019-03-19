@@ -2,8 +2,8 @@
 layout: post
 title: First Error
 action: incident-error
-date: 2017-09-22 21:12
-tags: [data, apps]
+date: 2019-02-22 21:12
+tags: [core, associate]
 ---
 
 This is an example first error on Staticus, [Narro's](//narro.co) static status page.

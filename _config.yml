@@ -1,14 +1,14 @@
-url: https://staticus.narro.co
-author: NarroApp
-email: support@narro.co
-title: Staticus
-description: The status page for the Narro API and services
-homepage: https://www.narro.co
+url: https://example.com
+author: Example Author
+email: support@example.com
+title: Andromeda
+description: Jekyll-based status page.
+homepage: https://yourcompany.name
 
 permalink: pretty
 uptime_days: 60
 
 # TODO: Build pagination into archive
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 paginate: 2
 paginate_path: '/archive/page:num/'

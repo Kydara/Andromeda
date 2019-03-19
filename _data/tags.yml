@@ -1,9 +1,12 @@
-- slug: apps
-  system: true
-  name: Apps and Runtime
-- slug: data
-  system: true
-  name: Data Services
-- slug: maintenance
-  scheduled: true
-  name: Scheduled Maintenance
+- slug:       core
+  system:     true
+  name:       Core services
+- slug:       web
+  system:     true
+  name:       Web services
+- slug:       associate
+  system:     true
+  name:       Associate infrastructure
+- slug:       maintenance
+  scheduled:  true
+  name:       Scheduled maintenance

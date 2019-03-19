@@ -61,26 +61,7 @@ title: Narro Status
 {% endif %}
 {% endfor %}
 
-<div class="index-heading">
-    <h2>
-        Uptime Last {{ site.uptime_days }} Days
-    </h2>
-</div>
-<hr/>
-<div class="uptime" style="display: none">
-    {% for post in site.posts limit:100 %}
-    <span class="{{ post.action }}" data-action="{{ post.action }}" data-url="{{ post.url }}" data-title="{{ post.title }}" data-date="{{ post.date | date_to_xmlschema }}">
-    </span>
-    {% endfor %}
-</div>
-<div class="uptime-scale">
-    <span>
-        {{ site.uptime_days }} Days Ago
-    </span>
-    <span>
-        Latest
-    </span>
-</div>
+
 
 <div class="index-heading">
     <h2>
@@ -103,38 +84,3 @@ title: Narro Status
     </div>
     {% endfor %}
 </div>
-<script>
-(function() {
-    var wrapper = document.querySelector('.uptime'),
-        posts   = document.querySelectorAll('.uptime span'),
-        span    = false,
-        a       = false,
-        dayp    = false,
-        n       = new Date(),
-        day     = (1000 * 60 * 60 * 24),
-        o       = new Date(n.getTime() - day * {{ site.uptime_days }}),
-        diff    = Math.floor((n.getTime() - o.getTime()) / day),
-        i, j    = 0;
-
-    for (j = diff; j >= 0; j--) {
-        span = document.createElement('span');
-        n = (new Date(o.getTime() + day * (diff - j)));
-        span.title = n.toDateString();
-        span.setAttribute('data-date', n.toJSON().slice(0, 10));
-        wrapper.appendChild(span);
-    }
-    for (i = 0; i < posts.length; i++) {
-        a = document.createElement('a');
-        n = (new Date(posts[i].dataset.date));
-        a.title     = n.toDateString() + ' ' + posts[i].dataset.title;
-        a.className = posts[i].dataset.action;
-        a.href      = posts[i].dataset.url;
-        dayp = wrapper.querySelector('[data-date="' + n.toJSON().slice(0, 10) + '"]');
-        if (dayp) {
-            dayp.appendChild(a);
-        }
-        wrapper.removeChild(posts[i]);
-    }
-    wrapper.style.display = '';
-})();
-</script>

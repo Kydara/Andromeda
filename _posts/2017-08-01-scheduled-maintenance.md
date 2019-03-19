@@ -2,7 +2,7 @@
 layout: post
 title: Scheduled Maintenance on Monday October 9 at 16:00 UTC (12:00 EDT)
 action: notification
-date: 2017-08-01 01:01
+date: 2019-02-01 01:01
 tags: [maintenance]
 ---
 On Monday, October 9, 2017 starting at 16:00 UTC (12:00 EDT), and continuing until 16:30 UTC (30 minutes), Heroku will be performing maintenance on Heroku Connect EU (Dublin region).
