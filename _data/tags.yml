@@ -1,9 +1,12 @@
 - slug:       core
   system:     true
-  name:       Core services
+  name:       Main server
 - slug:       web
   system:     true
   name:       Web services
+- slug:       email
+  system:     true
+  name:       E-mail server
 - slug:       associate
   system:     true
   name:       Associate infrastructure
