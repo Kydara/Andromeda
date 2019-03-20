@@ -1,15 +1,19 @@
 - slug:       core
   system:     true
   name:       Main server
+  icon:       server
 - slug:       web
   system:     true
   name:       Web services
+  icon:       globe-europe
 - slug:       email
   system:     true
   name:       E-mail server
+  icon:       envelope
 - slug:       associate
   system:     true
   name:       Associate infrastructure
+  icon:       building
 - slug:       maintenance
   scheduled:  true
   name:       Scheduled maintenance
