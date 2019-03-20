@@ -1,4 +1,6 @@
-# Posts
+# Andromeda
+
+## Posts
 
 Every post has a header. In Jekyll this is known as "frontmatter".
 
