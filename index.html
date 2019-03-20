@@ -76,7 +76,7 @@ title: Narro Status
     {% for post in site.posts limit:3 %}
     <div class="post {{ post.action }}">
         <h3>
-            <a href="{{site.url}{{ post.url }}">
+            <a href="{{ site.url }}{{ post.url }}">
                 {{ post.title }}
             </a>
         </h3>
