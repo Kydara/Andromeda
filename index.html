@@ -67,7 +67,7 @@ title: Narro Status
     <h2>
         Past Incidents
     </h2>
-    <a href="./archive">
+    <a href="{{ site.url}} /archive">
         View Archive
     </a>
 </div>
@@ -76,7 +76,7 @@ title: Narro Status
     {% for post in site.posts limit:3 %}
     <div class="post {{ post.action }}">
         <h3>
-            <a href="{{ post.url }}">
+            <a href="{{site.url}{{ post.url }}">
                 {{ post.title }}
             </a>
         </h3>
