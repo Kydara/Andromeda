@@ -3,21 +3,20 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ page.title }}</title>
-    <meta name="author" content="{{ site.author }}" />
-    <link href="rss.xml" rel="alternate" title="{{ site.title }}" type="application/xml" />
-    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection" />
-    <link rel="shortcut icon" href="/favicon.png" />
+    <link href="{{ site.url }}/rss.xml" rel="alternate" title="{{ site.title }}" type="application/xml" />
+    <link rel="stylesheet" href="{{ site.url }}/css/style.css" type="text/css" media="screen, projection" />
+    <link rel="shortcut icon" href="{{ site.url }}/favicon.png" />
     <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
-    <meta content="/favicon.png" name="twitter:image" property="og:image" />
+    <meta name="msapplication-TileImage" content="{{ site.url }}/favicon.png" />
+    <link rel="apple-touch-icon" href="{{ site.url }}/favicon.png" />
+    <meta content="{{ site.url }}/favicon.png" name="twitter:image" property="og:image" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
 </head>
 <body class="markdown-body">
     <div class="top">
         <div class="topright">
             <p>
-                <a href="/rss.xml"
+                <a href="{{ site.url }}/rss.xml"
                     title="Subscribe to the RSS feed"
                     rel="alternate">RSS</a>
             </p>
