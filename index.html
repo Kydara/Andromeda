@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Narro Status
+title: Kydara Status Page
 ---
 <meta name="description" content="{{ site.description }}" />
 <h1 class="site-title">
@@ -10,12 +10,11 @@ title: Narro Status
 </h1>
 {% for tag in site.data.tags %}
 {% if tag.scheduled %}
-<div class="posts">
+<div class="container">
     {% for post in site.tags[tag.slug] limit:1 %}
-        {% if post.action contains 'resolve' %}
-        {% else %}
-            <div class="post {{ post.action }}">
-                <div class="tags">
+        {% unless post.action contains 'success' %}
+            <div class="container {{ post.action }}">
+                <div class="container">
                     <span class="tag {{ tag.slug }}">
                         {{ tag.name }}
                     </span>
@@ -26,7 +25,7 @@ title: Narro Status
                     </a>
                 </h3>
             </div>
-        {% endif %}
+        {% endunless %}
         </div>
     {% endfor %}
 </div>
@@ -35,51 +34,41 @@ title: Narro Status
 
 {% for tag in site.data.tags %}
 {% if tag.system %}
-<div class="index-system">
-    <div class="index-heading">
-        <h2>
+{% for post in site.tags[tag.slug] limit:1 %}
+    <div class="alert alert-{{ post.action }}">
+        <h4 class="alert-heading">
             {{ tag.name }}
-        </h2>
-    </div>
-    <hr/>
-    {% for post in site.tags[tag.slug] limit:1 %}
-        <p class="{{ post.action }}">
-            {% if post.action contains 'incident' %}
-                <h3 class="{{ post.action }}">
-                    <a href="{{ post.url }}">
-                        {{ post.title }}
-                    </a>
-                </h3>
-            {% else %}
-                <h3 class="resolved">
-                    No known issues at this time.
-                </h3>
-            {% endif %}
-        </p>
-    {% endfor %}
+        </h4>
+    <p class="mb-0">
+    {% if post.action contains 'warning' or post.action contains 'danger' %}
+        At {{ post.date | date_to_rfc822 }}:
+        <a class="alert-link" href="{{ post.url }}">
+            {{ post.title }}
+        </a>
+    {% else %}
+        No issues reported.
+    {% endif %}
+    </p>
 </div>
+{% endfor %}
 {% endif %}
 {% endfor %}
 
 
 
-<div class="index-heading">
-    <h2>
-        Past Incidents
-    </h2>
-    <a href="{{ site.url}} /archive">
-        View Archive
+<div class="container">
+    <a class="btn btn-primary" href="{{ site.url}}/archive/" role="button">
+        View past incidents
     </a>
 </div>
-<hr/>
 <div id="posts"  class="posts">
-    {% for post in site.posts limit:3 %}
-    <div class="post {{ post.action }}">
-        <h3>
-            <a href="{{ site.url }}{{ post.url }}">
+    {% for post in site.posts limit:5 %}
+    <div class="alert alert-secondary {{ post.action }}">
+            <a class="alert-link" href="{{ site.url }}{{ post.url }}">
                 {{ post.title }}
             </a>
-        </h3>
+            <span class="badge badge-secondary">Insert type of thing</span>
+        <br>
         <span>{{ post.date | date_to_string }}</span>
     </div>
     {% endfor %}

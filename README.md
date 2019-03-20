@@ -1,60 +1,22 @@
-# Staticus
-A static status page, designed to be blazingly fast and quick enough to update. [Demo][0]
+# Posts
 
-- Runs on GitHub pages (jekyll)
-- Supports multiple status channels (e.g. _Apps_ and _Data_)
-- Supports 'scheduled maintenance' posts
-- Supports uptime history (of configurable length)
+Every post has a header. In Jekyll this is known as "frontmatter".
 
-## Usage
+As a general rule of thumb, you should always separate unrelated incidents. For example, if the server is under a DDoS attack, but you're planning a major upgrade (maintenance) to the system in the future, you should first make a warning post about the DDoS, and then a new post about the planned upgrade, so that when the attack is mitigated or ceases, you can close the incident without affecting the planned upgrade.
 
-To update the system status page (homepage), just create a new post in `_posts/`.
-
-Staticus uses a couple custom frontmatter fields:
-- `action` denotes the type of status message. (_incident-error_ or _incident-warning_ or _resolved_)
-
-Staticus also looks at the `tags` frontmatter to determine the appropriate channel for the update. You can update multiple channels with the same post. Define your channels in `_data/tags.yml`.
-
-- Any tag with `system: true` will be treated as a top-level system channel.
-- Any tag with `scheduled: true` will be treated as a scheduled channel.
-    - These are shown at the top of the status page.
-
-To run on GitHub Pages:
-- Fork the repository
-- Update the `_posts` and `_data` respectively
-- Update the CSS styling (_optional_)
-- Update the `CNAME` file
-- Push it up!
-
-### Example Frontmatter
-
+In Andromeda, headers look like this:
 ```
 ---
 layout: post
-title: First bad things happening
-date: 2017-01-01 11:11
-action: incident-error
-tags: [data, apps]
+title: YOUR_TITLE
+action: YOUR_ACTION
+date: YYYY-MM-DD HH:MM
+tags: YOUR_TAGS
 ---
 ```
 
-## Installation
-
-```sh
-# clone or download the repo
-$ bundle install
-$ jekyll serve
-```
-
-## Examples
-
-These sites are using Staticus:
-- https://status.narro.co
-- https://status.officeluv.com
-
-
-## Preview
-
-![Screenshot](https://github.com/NarroApp/staticus/blob/master/img/screenshot.png)
-
-[0]: https://staticus.narro.co
+- **`layout`**: This field must always be set to "post".
+- **`title`**: This title will be shown in the index page. A summary of what's wrong is appropriate. For example "Package upgrade", "API maintenance" or "DDoS attack".
+- **`action`**: This field corresponds to the Bootstrap colour class. For errors, use `danger`, for warnings, use `warning`, for when a fix is applied, use `success`, and for informational messages use `info`. For more details, take a look at [the Bootstrap documentation](https://getbootstrap.com/docs/4.3/components/alerts/)
+- **`date`**: This field specifies the date for the incident. In almost all cases, it should match the date of releasing the report.
+- **`tags`**: This field is an array of tags as defined in the `_data/tags.yml` file. An example of this field could be [core, web] or [maintenance].

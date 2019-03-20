@@ -21,11 +21,7 @@ layout: default
             Posted: {{ page.date }}
         </span>
     </p>
-    <h1 class="">
-        <a itemprop="url" href="{{ page.url }}">
-            {{ page.title }}
-        </a>
-    </h1>
+    <h1>{{ page.title }}</h1>
     <div class="tags">
         {% for post_tag in page.tags %}
             {% for data_tag in site.data.tags %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: First Error
-action: incident-error
+action: danger
 date: 2019-02-22 21:12
 tags: [core, associate]
 ---

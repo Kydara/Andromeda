@@ -1,7 +1,7 @@
 ---
 layout: post
 title: First Status
-action: resolve
+action: success
 date: 2018-09-13 21:12
 tags: [data, apps]
 ---

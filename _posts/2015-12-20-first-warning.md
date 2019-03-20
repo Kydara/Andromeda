@@ -1,7 +1,7 @@
 ---
 layout: post
 title: First Warning
-action: incident-warning
+action: warning
 date: 2019-03-10 21:12
 tags: [apps]
 ---

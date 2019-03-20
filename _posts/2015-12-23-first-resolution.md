@@ -1,7 +1,7 @@
 ---
 layout: post
 title: First Resolution
-action: resolve
+action: success
 date: 2019-02-23 21:12
 tags: [apps]
 ---
