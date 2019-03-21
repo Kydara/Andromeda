@@ -12,10 +12,7 @@ title: Kydara Status Page
             {{ site.description }}
         </p>
         <a class="btn btn-light" href="{{ site.url}}/archive/" role="button">View past events</a>
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-secondary">RSS</button>
-            <button type="button" class="btn btn-secondary">Atom</button>
-        </div>
+            <a href="{{site.url}}/atom.xml" role="button" class="btn btn-secondary"> <i class="fas fa-rss    "></i> Atom</a>
 
         <div class="container">
             {% for tag in site.data.tags %}
@@ -58,7 +55,6 @@ title: Kydara Status Page
                 <a href="{{ site.url}}{{ post.url }}"
                     class="list-group-item list-group-item-action list-group-item-{{ post.class }}">
                     {% endif %}
-                    <h5 class="mb-0">
                         <div class="d-flex justify-content-between vertical-center">
                             <span>
                                 <i class="fas fa-{{ tag.icon }}"></i> {{ tag.name }}
@@ -71,7 +67,6 @@ title: Kydara Status Page
                                 {% endif %}
                             </small>
                         </div>
-                    </h5>
                     {% if post.class == "success" %}
             </li>
             {% else %}

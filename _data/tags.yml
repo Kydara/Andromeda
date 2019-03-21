@@ -4,8 +4,12 @@
   icon:       server
 - slug:       web
   system:     true
-  name:       Nginx
+  name:       HTTPS load balancer
   icon:       globe-europe
+- slug:       network
+  system:     true
+  name:       Network connectivity
+  icon:       network-wired
 - slug:       tls
   system:     true
   name:       TLS certificates

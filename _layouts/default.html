@@ -26,10 +26,14 @@
     {% endfor %}
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <ul class="navbar-nav">
-            <a href="https://www.kydara.com" class="nav-link"> <i class="fas fa-chevron-circle-left"></i> Home </a>
+            <a href="{{ site.homepage }}" class="nav-link"> <i class="fas fa-chevron-circle-left"></i> {{ site.homepage_name }} </a>
         </ul>
         <ul class="navbar-nav">
+            {% if page.id or page.url != "/" %}
+            <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            {% else %}
             <button class="navbar-toggler bg-secondary" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            {% endif %}
                 <i class="fas fa-caret-down"></i>
             </button>
         </ul>

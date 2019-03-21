@@ -2,12 +2,18 @@ url: https://kydara.github.io/Andromeda/
 author: Peacemaker
 title: Kydara Status
 description: Kydara systems status at a glance!
-homepage: https://yourcompany.name
+homepage: https://www.kydara.com
+homepage_name: Kydara Home
+
+feed:
+  path: atom.xml
 
 permalink: pretty
-uptime_days: 60
 
 # TODO: Build pagination into archive
-plugins: [jekyll-paginate]
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+
 paginate: 2
 paginate_path: '/archive/page:num/'
