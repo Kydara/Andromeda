@@ -1,10 +1,10 @@
-- slug:       core
+- slug:       main
   system:     true
   name:       Main server
   icon:       server
 - slug:       web
   system:     true
-  name:       HTTPS reverse proxy
+  name:       Nginx
   icon:       globe-europe
 - slug:       tls
   system:     true

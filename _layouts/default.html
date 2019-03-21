@@ -29,38 +29,38 @@
             <a href="https://www.kydara.com" class="nav-link"> <i class="fas fa-chevron-circle-left"></i> Home </a>
         </ul>
         <ul class="navbar-nav">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler bg-secondary" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <i class="fas fa-caret-down"></i>
             </button>
         </ul>
-        <ul class="navbar-nav" id="collapsibleNavbar">
-            {% for entry in site.data.navigation %}
-            {% if page.id %}
-            {% assign current = 'class="nav-link"' %}
-            {% elsif entry.url == current_page %}
-            {% assign current = 'class="nav-link active"' %}
-            {% else %}
-            {% assign current = 'class="nav-link"' %}
-            {% endif %}
-            {% assign sublinks = entry.sublinks %}
-            {% if sublinks %}
-            <li {{ current }}>
-                <a class="nav-link" href="{{ site.baseurl }}{{ entry.url }}">
-                    {{ entry.title }}
-                </a>
-            </li>
-            {% else %}
-            <li {{ current }}>
-                <a class="nav-link" href="{{ site.baseurl }}{{ entry.url }}">
-                    {{ entry.title }}
-                </a>
-            </li>
-            {% endif %}
-            {% endfor %}
-        </ul>
-    </nav>
-    {{ content }}
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        <div class="navbar-collapse collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                {% for entry in site.data.navigation %}
+                {% if page.id %}
+                {% assign current = 'class="nav-link"' %}
+                {% elsif entry.url == current_page %}
+                {% assign current = 'class="nav-link active"' %}
+                {% else %}
+                {% assign current = 'class="nav-link"' %}
+                {% endif %}
+                {% assign sublinks = entry.sublinks %}
+                {% if sublinks %}
+                <li {{ current }}>
+                    <a class="nav-link" href="{{ site.baseurl }}{{ entry.url }}">
+                        {{ entry.title }}
+                    </a>
+                </li>
+                {% else %}
+                <li {{ current }}>
+                    <a class="nav-link" href="{{ site.baseurl }}{{ entry.url }}">
+                        {{ entry.title }}
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </nav> {{ content }} <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
