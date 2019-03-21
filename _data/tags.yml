@@ -4,16 +4,33 @@
   icon:       server
 - slug:       web
   system:     true
-  name:       Web services
+  name:       HTTPS reverse proxy
   icon:       globe-europe
+- slug:       tls
+  system:     true
+  name:       TLS certificates
+  icon:       lock
 - slug:       email
   system:     true
-  name:       E-mail server
+  name:       E-mail service
   icon:       envelope
+- slug:       nextcloud
+  system:     true
+  name:       NextCloud server
+  icon:       cloud
+- slug:       search
+  system:     true
+  name:       Search
+  icon:       search
 - slug:       associate
   system:     true
-  name:       Associate infrastructure
+  name:       Associate services
   icon:       building
-- slug:       maintenance
-  scheduled:  true
-  name:       Scheduled maintenance
+- slug:       vpn
+  system:     true
+  name:       VPN connectivity
+  icon:       sitemap
+- slug:       notification
+  notification: true
+  name:       Notification
+  icon:       bell

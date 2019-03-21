@@ -3,7 +3,7 @@ layout: post
 title: Everything is broken
 class: danger
 date: 2019-03-20 09:12
-tags: [core, associate, web]
+tags: [core, web, tls, email, nextcloud, search, associate, vpn]
 ---
 
-Everything is broken
+Because of a solar flare, every single circuit in the Kydara server is now fried.

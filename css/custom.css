@@ -1,4 +1,7 @@
 .vertical-center {
-	display: flex;
-	align-items: center;
-  }
+    display: flex;
+    align-items: center;
+}
+.container {
+    max-width: 900px;
+}

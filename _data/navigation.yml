@@ -1,0 +1,7 @@
+# Belongs at: /_data/navigation.yml
+
+- title: Status
+  url: /
+
+- title: Archive
+  url: /archive
