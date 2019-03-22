@@ -5,3 +5,9 @@
 main.container {
     max-width: 1000px;
 }
+#icon
+{
+    min-width: 22px;
+    margin-right: 1rem;
+    text-align: center;
+}

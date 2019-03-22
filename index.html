@@ -11,8 +11,8 @@ title: Kydara Status Page
         <p class="lead">
             {{ site.description }}
         </p>
-        <a class="btn btn-light" href="{{ site.url}}/archive/" role="button">View past events</a>
-            <a href="{{site.url}}/atom.xml" role="button" class="btn btn-secondary"> <i class="fas fa-rss    "></i> Atom</a>
+        <a class="btn btn-light" href="{{ site.baseurl}}/archive/" role="button">View past events</a>
+        <a href="{{site.baseurl}}/atom.xml" role="button" class="btn btn-secondary"> <i class="fas fa-rss    "></i> Atom</a>
 
         <div class="container">
             {% for tag in site.data.tags %}
@@ -52,21 +52,26 @@ title: Kydara Status Page
             {% if post.class == "success" %}
             <li class="list-group-item list-group-item-{{ post.class }}">
                 {% else %}
-                <a href="{{ site.url}}{{ post.url }}"
+                <a href="{{ site.baseurl}}{{ post.url }}"
                     class="list-group-item list-group-item-action list-group-item-{{ post.class }}">
                     {% endif %}
+                    <div class="d-flex justify-content-between vertical-center">
                         <div class="d-flex justify-content-between vertical-center">
-                            <span>
-                                <i class="fas fa-{{ tag.icon }}"></i> {{ tag.name }}
-                            </span>
-                            <small>
-                                {% if post.class == "success" %}
-                                <i class="fas fa-check-circle"></i>
-                                {% else %}
-                                <i class="fas fa-times-circle"></i>
-                                {% endif %}
-                            </small>
+                            <div id="icon">
+                                <i class="fas fa-{{ tag.icon }}"></i>
+                            </div>
+                            <div>
+                                {{ tag.name }}
+                            </div>
                         </div>
+                        <small>
+                            {% if post.class == "success" %}
+                            <i class="fas fa-check-circle"></i>
+                            {% else %}
+                            <i class="fas fa-times-circle"></i>
+                            {% endif %}
+                        </small>
+                    </div>
                     {% if post.class == "success" %}
             </li>
             {% else %}
@@ -87,7 +92,7 @@ title: Kydara Status Page
             <div class="card-header">
                 <div class="d-flex justify-content-between vertical-center">
                     {{ post.date | date: "%-d %b %Y, %H:%M" }}
-                    <a href="{{ site.url }}{{ post.url }}" class="btn btn-primary">View</a>
+                    <a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-primary">View</a>
                 </div>
             </div>
             <div class="card-body">
