@@ -38,6 +38,8 @@
         </ul>
         <div class="navbar-collapse collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
+                {{ site.url }}
+                {{ current_page }}
                 {% for entry in site.data.navigation %}
                 {% if page.id %}
                 {% assign current = 'class="nav-link"' %}
