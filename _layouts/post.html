@@ -6,12 +6,12 @@ layout: default
 <meta name="twitter:site"       content="@{{ site.author }}" />
 <meta name="twitter:title"      content="{{ page.title }}" />
 <meta name="twitter:description"content="{{ page.date | date_to_string }}" />
-<meta name="twitter:image"      content="{{ site.baseurl }}/favicon.png" />
+<meta name="twitter:image"      content="{{ site.url }}/favicon.png" />
 <meta name="twitter:url"        content="{{ page.url }}" />
 <meta property="og:title"       content="{{ page.title }}" />
 <meta property="og:type"        content="article" />
 <meta property="og:url"         content="{{ page.url }}" />
-<meta property="og:image"       content="{{ site.baseurl }}/favicon.png" />
+<meta property="og:image"       content="{{ site.url }}/favicon.png" />
 <meta property="og:site_name"   content="{{ site.title }}" />
 
 <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -45,7 +45,7 @@ layout: default
     </div>
     <hr/>
     <h4 class="site-title">
-        <a rel="home" href="{{ site.baseurl }}" title="{{ site.title }}">
+        <a rel="home" href="{{ site.url }}" title="{{ site.title }}">
             &larr; {{ site.title }}
         </a>
     </h4>

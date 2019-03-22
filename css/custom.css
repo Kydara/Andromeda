@@ -2,12 +2,11 @@
     display: flex;
     align-items: center;
 }
-main.container {
-    max-width: 1000px;
+main{
+    max-width: 800px;
 }
-#icon
+.icon
 {
     min-width: 22px;
-    margin-right: 1rem;
     text-align: center;
 }
