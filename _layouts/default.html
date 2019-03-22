@@ -25,21 +25,23 @@
     {% endfor %}
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <ul class="navbar-nav">
-            <a href="{{ site.homepage }}" class="nav-link"> <i class="fas fa-chevron-circle-left"></i> {{ site.homepage_name }} </a>
+            <a href="{{ site.homepage }}" class="nav-link"> <i class="fas fa-chevron-circle-left"></i>
+                {{ site.homepage_name }} </a>
         </ul>
         <ul class="navbar-nav">
             {% if page.id or page.url != "/" %}
-            <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            {% else %}
-            <button class="navbar-toggler bg-secondary" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            {% endif %}
-                <i class="fas fa-caret-down"></i>
-            </button>
+            <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar">
+                {% else %}
+                <button class="navbar-toggler bg-secondary" type="button" data-toggle="collapse"
+                    data-target="#collapsibleNavbar">
+                    {% endif %}
+                    <i class="fas fa-caret-down"></i>
+                </button>
         </ul>
         <div class="navbar-collapse collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
-                {{ site.url }}
-                {{ current_page }}
+                {{ fullurl }}
                 {% for entry in site.data.navigation %}
                 {% if page.id %}
                 {% assign current = 'class="nav-link"' %}
@@ -65,7 +67,9 @@
                 {% endfor %}
             </ul>
         </div>
-    </nav> {{ content }} <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    </nav>
+    {{ content }}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
