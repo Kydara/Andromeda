@@ -15,7 +15,7 @@
 
 <body>
     {% for entry in site.data.navigation %}
-    {% capture fullurl %}{{ site.url }}{{ entry.url }}{% endcapture %}
+    {% capture fullurl %}{{ site.baseurl }}{{ entry.url }}{% endcapture %}
     {% if fullurl == page.url %}
     {% assign current_page = fullurl %}
     {% break %}
