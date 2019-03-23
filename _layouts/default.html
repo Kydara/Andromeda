@@ -15,7 +15,7 @@
 
 <body>
     {% for entry in site.data.navigation %}
-    {% capture fullurl %}{{ site.baseurl }}{{ entry.url }}{% endcapture %}
+    {% capture fullurl %}{{ site.url }}{{ entry.url }}{% endcapture %}
     {% if fullurl == page.url %}
     {% assign current_page = fullurl %}
     {% break %}
@@ -41,6 +41,7 @@
         </ul>
         <div class="navbar-collapse collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
+{{ fullurl }}
                 {% for entry in site.data.navigation %}
                 {% if page.id %}
                 {% assign current = 'class="nav-link"' %}
