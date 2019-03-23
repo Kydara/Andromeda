@@ -9,6 +9,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/custom.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
@@ -49,19 +50,11 @@
                 {% assign current = 'class="nav-link"' %}
                 {% endif %}
                 {% assign sublinks = entry.sublinks %}
-                {% if sublinks %}
                 <li {{ current }}>
                     <a class="nav-link" href="{{ site.baseurl }}{{ entry.url }}">
                         {{ entry.title }}
                     </a>
                 </li>
-                {% else %}
-                <li {{ current }}>
-                    <a class="nav-link" href="{{ site.baseurl }}{{ entry.url }}">
-                        {{ entry.title }}
-                    </a>
-                </li>
-                {% endif %}
                 {% endfor %}
             </ul>
         </div>
