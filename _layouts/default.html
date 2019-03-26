@@ -9,57 +9,17 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/custom.css" type="text/css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/custom.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
 <body>
-    {% for entry in site.data.navigation %}
-    {% capture fullurl %}{{ site.baseurl }}{{ entry.url }}{% endcapture %}
-    {% if fullurl == page.url %}
-    {% assign current_page = fullurl %}
-    {% break %}
-    {% elsif page.url contains fullurl %}
-    {% assign current_page = fullurl %}
-    {% endif %}
-    {% endfor %}
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <ul class="navbar-nav">
             <a href="{{ site.homepage }}" class="nav-link"> <i class="fas fa-chevron-circle-left"></i>
-                {{ site.homepage_name }} </a>
+                {{ site.homepage_name }}
+            </a>
         </ul>
-        <ul class="navbar-nav">
-            {% if page.id or page.url != "/" %}
-            <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse"
-                data-target="#collapsibleNavbar">
-                {% else %}
-                <button class="navbar-toggler bg-secondary" type="button" data-toggle="collapse"
-                    data-target="#collapsibleNavbar">
-                    {% endif %}
-                    <i class="fas fa-caret-down"></i>
-                </button>
-        </ul>
-        <div class="navbar-collapse collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-{{ fullurl }}
-test2
-                {% for entry in site.data.navigation %}
-                {% if page.id %}
-                {% assign current = 'class="nav-link"' %}
-                {% elsif entry.url == current_page %}
-                {% assign current = 'class="nav-link active"' %}
-                {% else %}
-                {% assign current = 'class="nav-link"' %}
-                {% endif %}
-                {% assign sublinks = entry.sublinks %}
-                <li {{ current }}>
-                    <a class="nav-link" href="{{ site.baseurl }}{{ entry.url }}">
-                        {{ entry.title }}
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
     </nav>
     {{ content }}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -72,5 +32,4 @@ test2
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 </body>
-
 </html>

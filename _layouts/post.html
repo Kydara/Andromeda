@@ -2,51 +2,37 @@
 layout: default
 ---
 
-<meta name="twitter:card"       content="summary" />
-<meta name="twitter:site"       content="@{{ site.author }}" />
-<meta name="twitter:title"      content="{{ page.title }}" />
-<meta name="twitter:description"content="{{ page.date | date_to_string }}" />
-<meta name="twitter:image"      content="{{ site.url }}/favicon.png" />
-<meta name="twitter:url"        content="{{ page.url }}" />
-<meta property="og:title"       content="{{ page.title }}" />
-<meta property="og:type"        content="article" />
-<meta property="og:url"         content="{{ page.url }}" />
-<meta property="og:image"       content="{{ site.url }}/favicon.png" />
-<meta property="og:site_name"   content="{{ site.title }}" />
-
-<article itemscope itemtype="http://schema.org/BlogPosting">
-    <meta itemprop="author" content="{{ site.author }}" />
-    <p class="meta">
-        <span itemprop="datePublished">
-            Posted: {{ page.date }}
-        </span>
-    </p>
-    <h1>{{ page.title }}</h1>
-    <div class="tags">
-        {% for post_tag in page.tags %}
-            {% for data_tag in site.data.tags %}
-                {% if data_tag.slug == post_tag %}
+<main class="container" role="main">
+    <h1>Post view</h1>
+    <div class="card border-{{ page.class }}">
+        <div class="card-header">
+            <div class="d-flex justify-content-between vertical-center">
+                <div>
+                    {{ page.date | date: "%-d %b %Y, %H:%M" }}
+                </div>
+                <div class="icon">
+                    {% for post_tag in page.tags %}
+                    {% for data_tag in site.data.tags %}
+                    {% if data_tag.slug == post_tag %}
                     {% assign tag = data_tag %}
-                {% endif %}
-            {% endfor %}
-            {% if tag %}
-                <span class="tag {{ tag.slug }}">
-                    {{ tag.name }}
-                </span>
-            {% else %}
-                <span class="tag {{ post_tag }}">
-                    {{ post_tag }}
-                </span>
-            {% endif %}
-        {% endfor %}
+                    {% endif %}
+                    {% endfor %}
+                    {% if tag and tag.system %}
+                    <div>
+                        <i class="fas fa-{{ tag.icon }}"></i>
+                    </span>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                {{ page.title }}
+            </h2>
+            <p class="card-text">
+                {{ content }}
+            </p>
+        </div>
     </div>
-    <div class="content" itemprop="articleBody">
-        {{ content }}
-    </div>
-    <hr/>
-    <h4 class="site-title">
-        <a rel="home" href="{{ site.url }}" title="{{ site.title }}">
-            &larr; {{ site.title }}
-        </a>
-    </h4>
-</article>
+</main>
