@@ -7,7 +7,8 @@ Every post has a header. In Jekyll this is known as "frontmatter".
 As a general rule of thumb, you should always separate unrelated incidents. For example, if the server is under a DDoS attack, but you're planning a major upgrade (maintenance) to the system in the future, you should first make a warning post about the DDoS, and then a new post about the planned upgrade, so that when the attack is mitigated or ceases, you can close the incident without affecting the planned upgrade.
 
 In Andromeda, headers look like this:
-```
+
+```frontmatter
 ---
 layout: post
 title: YOUR_TITLE
