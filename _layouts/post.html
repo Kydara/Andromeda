@@ -7,7 +7,7 @@ layout: default
             {{ site.homepage_name }}
         </a>
     </ul>
-    <div class="collapse navbar-collapse">
+    <div class="navbar">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="{{ site.url }}">Status <span class="sr-only"><span></a>
@@ -27,20 +27,6 @@ layout: default
         <div class="card border-{{ page.class }}">
             <div class="card-header d-flex justify-content-between vertical-center">
                 {{ page.date | date: "%-d %b %Y, %H:%M" }}
-                <div>
-                    Affects:
-                    {% for post_tag in page.tags %}
-                    {% for data_tag in site.data.tags %}
-                    {% if data_tag.slug == post_tag %}
-                    {% assign tag = data_tag %}
-                    {% endif %}
-                    {% endfor %}
-                    {% if tag and tag.system %}
-                    <i class="fas fa-{{ tag.icon }}"></i>
-                    </span>
-                    {% endif %}
-                    {% endfor %}
-                </div>
             </div>
             <div class="card-body">
                 <h2 class="card-title">
