@@ -10,3 +10,7 @@ main.container{
     min-width: 22px;
     text-align: center;
 }
+main
+{
+    padding-top: 1rem;
+}
