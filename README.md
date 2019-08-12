@@ -1,5 +1,9 @@
 # Andromeda
 
+A universal status page that can be hosted on GitHub, ensuring its availability even if your infrastructure is down.
+
+![Screenshot](img/screenshot.png)
+
 ## Posts
 
 Every post has a header. In Jekyll this is known as "frontmatter".
@@ -22,4 +26,4 @@ tags: YOUR_TAGS
 - **`title`**: This title will be shown in the index page. A summary of what's wrong is appropriate. For example "Package upgrade", "API maintenance" or "DDoS attack".
 - **`action`**: This field corresponds to the Bootstrap colour class. For errors, use `danger`, for warnings, use `warning`, for when a fix is applied, use `success`, and for informational messages use `info`. For more details, take a look at [the Bootstrap documentation](https://getbootstrap.com/docs/4.3/components/alerts/)
 - **`date`**: This field specifies the date for the incident. In almost all cases, it should match the date of releasing the report.
-- **`tags`**: This field is an array of tags as defined in the `_data/tags.yml` file. An example of this field could be [core, web] or [maintenance].
+- **`tags`**: This field is an array of tags as defined in the `_data/tags.yml` file. An example of this field could be `[core, web]` or `[maintenance]`.

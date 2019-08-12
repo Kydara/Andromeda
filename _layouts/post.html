@@ -23,7 +23,7 @@ layout: default
 </nav>
 <main class="container" role="main">
     <div class="container">
-        <h1>Post view</h1>
+        <h1>Event view</h1>
         <div class="card border-{{ page.class }}">
             <div class="card-header d-flex justify-content-between vertical-center">
                 {{ page.date | date: "%-d %b %Y, %H:%M" }}
@@ -34,6 +34,7 @@ layout: default
                 </h2>
                 <p class="card-text">
                     {{ content }}
+
                 </p>
             </div>
         </div>

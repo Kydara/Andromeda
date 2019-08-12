@@ -17,3 +17,8 @@ plugins:
 
 paginate: 2
 paginate_path: '/archive/page:num/'
+
+defaults:
+  - scope:
+    values:
+      layout: article
