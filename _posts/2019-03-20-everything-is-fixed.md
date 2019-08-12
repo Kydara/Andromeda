@@ -5,9 +5,6 @@ date: 2019-03-20 09:20
 tags: [main, web, email]
 ---
 
-One sentence.
+Only the first sentence will show up as a preview.
 
-Second sentence.
-
-Verylongsentenceabcdefghijoklmonpqrstuv very very long Verylongsentenceabcdefghijoklmonpqrstuv
-very long
+The rest will be hidden inside the post.
