@@ -2,39 +2,54 @@
   system:     true
   name:       Main server
   icon:       server
+  fa:         fas
 - slug:       web
   system:     true
   name:       HTTPS load balancer
   icon:       globe-europe
+  fa:         fas
 - slug:       network
   system:     true
   name:       Network connectivity
   icon:       network-wired
+  fa:         fas
 - slug:       tls
   system:     true
   name:       TLS certificates
   icon:       lock
+  fa:         fas
 - slug:       email
   system:     true
   name:       E-mail service
   icon:       envelope
+  fa:         fas
 - slug:       nextcloud
   system:     true
   name:       NextCloud server
   icon:       cloud
+  fa:         fas
+- slug:       gitlab
+  system:     true
+  name:       GitLab server
+  icon:       gitlab
+  fa:         fab
 - slug:       search
   system:     true
   name:       Search
   icon:       search
+  fa:         fas
 - slug:       associate
   system:     true
   name:       Associate services
   icon:       building
+  fa:         fas
 - slug:       vpn
   system:     true
   name:       VPN connectivity
   icon:       sitemap
+  fa:         fas
 - slug:       notification
   notification: true
   name:       Notification
   icon:       bell
+  fa:         fas
