@@ -33,11 +33,6 @@
   name:       GitLab server
   icon:       gitlab
   fa:         fab
-- slug:       search
-  system:     true
-  name:       Search
-  icon:       search
-  fa:         fas
 - slug:       associate
   system:     true
   name:       Associate services
