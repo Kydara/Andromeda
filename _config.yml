@@ -1,9 +1,9 @@
 url: https://kydara.github.io/Andromeda
 author: Peacemaker
-title: Kydara Status
-description: Kydara systems status at a glance!
-homepage: https://www.kydara.com
-homepage_name: Kydara Home
+title: Andromeda
+description: System status at a glance
+homepage: https://www.example.com
+homepage_name: Andromeda Home
 
 feed:
   path: atom.xml
