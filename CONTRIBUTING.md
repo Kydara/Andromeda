@@ -6,7 +6,7 @@ We love pull requests from everyone. By participating in this project, you agree
 Fork and clone the repo and get started:
 
 ```shell
-$ git clone git@github.com:NarroApp/staticus.git && cd staticus
+$ git clone git@github.com:Kydara/Andromeda.git && cd Andromeda
 $ bundle install && jekyll serve
 ```
 
